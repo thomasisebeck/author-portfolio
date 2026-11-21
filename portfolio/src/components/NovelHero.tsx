@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, ArrowUpRight } from "lucide-react";
+import { BookOpen, ArrowUpRight, Download } from "lucide-react";
 import { BookCard } from "./BookCard";
 
 interface NovelHeroProps {
@@ -11,6 +11,7 @@ interface NovelHeroProps {
   blurbParagraphs: string[];
   buyLink?: string;
   excerptLink?: string;
+  epubLink?: string;
 }
 
 export const NovelHero: React.FC<NovelHeroProps> = ({
@@ -20,8 +21,9 @@ export const NovelHero: React.FC<NovelHeroProps> = ({
   coverUrl = "/cover",
   intro,
   blurbParagraphs,
-  buyLink = "#buy",
-  excerptLink = "#excerpt",
+  buyLink,
+  excerptLink,
+  epubLink,
 }) => {
   return (
     <section
@@ -59,15 +61,23 @@ export const NovelHero: React.FC<NovelHeroProps> = ({
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start">
           <a
             href={buyLink}
-            className="inline-flex items-center gap-2 rounded-md bg-stone-900 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-amber-700"
+            className="inline-flex items-center gap-2 rounded-md bg-stone-900 px-6 py-3 text-base font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-amber-700 cursor-pointer"
           >
-            Get the Book <ArrowUpRight className="h-4 w-4" />
+            Get the Book on Amazon
+            <ArrowUpRight className="h-4 w-4" />
           </a>
           <a
             href={excerptLink}
-            className="inline-flex items-center gap-2 rounded-md border border-stone-300 bg-white px-6 py-3 text-base font-medium text-stone-800 transition-colors hover:border-stone-900 hover:text-stone-950"
+            className="inline-flex items-center gap-2 rounded-md border border-stone-300 bg-white px-6 py-3 text-base font-medium text-stone-800 transition-colors hover:border-stone-900 hover:text-stone-950 cursor-pointer"
           >
             <BookOpen className="h-4 w-4" /> Read Chapter One
+          </a>
+          <a
+            href={epubLink}
+            download
+            className="inline-flex items-center gap-2 rounded-md border border-stone-300 bg-white px-6 py-3 text-base font-medium text-stone-800 transition-colors hover:border-stone-900 hover:text-stone-950 cursor-pointer"
+          >
+            <Download className="h-4 w-4" /> Download a free epub
           </a>
         </div>
       </div>

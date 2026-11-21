@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { Mail } from "lucide-react";
 import { NovelHero } from "./components/NovelHero";
 import { StoriesSection } from "./components/StoriesSection";
-import type { Story } from "./components/StoriesSection";
+import type { Poem, Story } from "./components/StoriesSection";
+
+const ActiveSection = {
+  Novel: "novel",
+  Stories: "stories",
+} as const;
+
+type ActiveSection = (typeof ActiveSection)[keyof typeof ActiveSection];
 
 const NOVEL_INTRO =
-  "Five years in the making, What’s Right With You? is a psychological story about codependency, memory, and the quiet terror of being truly known. Spin the cover to inspect the jacket, read the opening chapter, or explore shorter fiction below.";
+  "Five years in the making, What's Right With You? is a psychological story about codependency, memory, and the quiet terror of being truly known. Spin the cover to inspect the jacket, read the opening chapter, or explore shorter fiction below.";
 
 const NOVEL_BLURB = [
   "Most feel accomplished on their twenty-first birthday.\nI cried.",
@@ -37,24 +45,43 @@ const SHORT_WORKS: Story[] = [
 ];
 
 export function App() {
+  const [activeSection, setActiveSection] = useState<ActiveSection>(
+    ActiveSection.Novel,
+  );
+
   return (
     <div className="min-h-screen bg-[#fbf9f5] font-sans text-stone-900 antialiased selection:bg-amber-200/60">
       <div className="mx-auto max-w-5xl px-6 sm:px-8">
         {/* Minimal Header */}
         <header className="flex items-center justify-between border-b border-stone-200/80 py-8">
-          <span className="font-serif text-xl font-normal text-stone-900">
+          <button
+            type="button"
+            onClick={() => setActiveSection(ActiveSection.Novel)}
+            className="cursor-pointer font-serif text-xl font-normal text-stone-900"
+          >
             Thomas Isebeck
-          </span>
+          </button>
           <nav className="flex gap-7 text-base font-medium text-stone-600">
-            <a href="#novel" className="transition-colors hover:text-stone-950">
+            <button
+              type="button"
+              onClick={() => setActiveSection(ActiveSection.Novel)}
+              className={`cursor-pointer transition-colors hover:text-stone-950 ${activeSection === ActiveSection.Novel
+                ? "text-stone-950 underline decoration-amber-700 underline-offset-8"
+                : ""
+                }`}
+            >
               Novel
-            </a>
-            <a
-              href="#stories"
-              className="transition-colors hover:text-stone-950"
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveSection(ActiveSection.Stories)}
+              className={`cursor-pointer transition-colors hover:text-stone-950 ${activeSection === ActiveSection.Stories
+                ? "text-stone-950 underline decoration-amber-700 underline-offset-8"
+                : ""
+                }`}
             >
               Stories
-            </a>
+            </button>
             <a
               href="#contact"
               className="transition-colors hover:text-stone-950"
@@ -65,15 +92,19 @@ export function App() {
         </header>
 
         <main>
-          <NovelHero
-            title="What’s Right With You?"
-            author="Thomas Isebeck"
-            coverUrl="/cover"
-            intro={NOVEL_INTRO}
-            blurbParagraphs={NOVEL_BLURB}
-          />
+          {activeSection === ActiveSection.Novel && (
+            <NovelHero
+              title="What's Right With You?"
+              author="Thomas Isebeck"
+              coverUrl="/cover"
+              intro={NOVEL_INTRO}
+              blurbParagraphs={NOVEL_BLURB}
+            />
+          )}
 
-          <StoriesSection stories={SHORT_WORKS} />
+          {activeSection === ActiveSection.Stories && (
+            <StoriesSection stories={SHORT_WORKS} />
+          )}
         </main>
 
         {/* Footer */}
@@ -81,7 +112,7 @@ export function App() {
           id="contact"
           className="flex flex-col items-center justify-between gap-4 border-t border-stone-200/80 py-10 text-base text-stone-500 sm:flex-row"
         >
-          <p>© {new Date().getFullYear()} Thomas Isebeck</p>
+          <p>&copy; {new Date().getFullYear()} Thomas Isebeck</p>
           <a
             href="mailto:hello@example.com"
             className="inline-flex items-center gap-2 font-medium text-stone-800 transition-colors hover:text-amber-700"
