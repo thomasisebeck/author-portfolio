@@ -1,1 +1,183 @@
 @import "tailwindcss";
+
+/* =========================================
+   Headings: Liberation Serif (/fonts/)
+   ========================================= */
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/LiberationSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/LiberationSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/LiberationSerif-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/LiberationSerif-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* =========================================
+   Body & UI: Alegreya Sans (/fonts/alegreya/)
+   ========================================= */
+
+/* 100 - Thin */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 300 - Light */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 400 - Regular */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 500 - Medium */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 700 - Bold */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 800 - ExtraBold */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 900 - Black */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya/AlegreyaSans-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+  }
+}
+
+/* =========================================
+   Tailwind v4 Theme Tokens
+   ========================================= */
+
+@theme {
+  --font-serif: "Liberation Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Alegreya Sans", system-ui, -apple-system, sans-serif;
+}
