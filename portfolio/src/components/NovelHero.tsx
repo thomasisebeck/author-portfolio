@@ -7,6 +7,7 @@ interface NovelHeroProps {
   title: string;
   author: string;
   coverUrl?: string;
+  intro?: string;
   blurbParagraphs: string[];
   buyLink?: string;
   excerptLink?: string;
@@ -17,6 +18,7 @@ export const NovelHero: React.FC<NovelHeroProps> = ({
   title,
   author,
   coverUrl = "/cover",
+  intro,
   blurbParagraphs,
   buyLink = "#buy",
   excerptLink = "#excerpt",
@@ -26,23 +28,33 @@ export const NovelHero: React.FC<NovelHeroProps> = ({
       id="novel"
       className="grid grid-cols-1 items-center gap-12 py-14 md:grid-cols-12 md:gap-10 md:py-20"
     >
-      {/* Left Column: Blurb & Actions */}
+      {/* Left Column: Intro, Blurb & Actions */}
       <div className="order-2 text-center md:order-1 md:col-span-7 md:text-left">
-        <span className="mb-3 inline-block text-xs font-bold tracking-[0.16em] text-amber-700 uppercase">
+        <span className="mb-3 inline-block text-xs font-bold text-amber-700 uppercase">
           {eyebrow}
         </span>
-        <h1 className="mb-6 font-serif text-4xl leading-[1.12] font-normal tracking-tight text-stone-900 sm:text-5xl">
+        <h1 className="mb-5 font-serif text-4xl font-normal text-stone-900 sm:text-5xl">
           {title}
         </h1>
 
-        {blurbParagraphs.map((paragraph, index) => (
-          <p
-            key={index}
-            className="mx-auto mb-5 max-w-xl text-lg leading-relaxed text-stone-600 last:mb-0 sm:text-[1.2rem] md:mx-0"
-          >
-            {paragraph}
+        {intro && (
+          <p className="mx-auto mb-7 max-w-xl border-stone-300/90 text-base text-stone-500 italic sm:text-lg md:mx-0 md:border-l-2 md:pl-4">
+            {intro}
           </p>
-        ))}
+        )}
+
+        <div className="space-y-4 text-center">
+          {blurbParagraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className={
+                "mx-auto max-w-xl text-lg whitespace-pre-line text-stone-700 sm:text-[1.2rem] md:mx-0 first:font-bold"
+              }
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start">
           <a
@@ -63,9 +75,7 @@ export const NovelHero: React.FC<NovelHeroProps> = ({
       {/* Right Column: 3D Interactive Book */}
       <div className="order-1 flex flex-col items-center md:order-2 md:col-span-5">
         <BookCard coverUrl={coverUrl} title={title} author={author} />
-        <span className="mt-1 text-sm tracking-wide text-stone-400">
-          Drag to rotate 360°
-        </span>
+        <span className="mt-1 text-sm text-stone-400">Drag to rotate 360°</span>
       </div>
     </section>
   );

@@ -41,7 +41,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             className="group grid grid-cols-1 items-center gap-2 px-3 py-6 transition-colors hover:bg-stone-200/40 md:grid-cols-12 md:gap-6"
           >
             <div className="md:col-span-4">
-              <span className="block text-xs font-bold tracking-wider text-amber-700">
+              <span className="block text-xs font-bold text-amber-700">
                 {story.year}
               </span>
               <h3 className="mt-0.5 font-serif text-xl font-normal text-stone-900 group-hover:text-amber-800">

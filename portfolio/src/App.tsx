@@ -3,9 +3,14 @@ import { NovelHero } from "./components/NovelHero";
 import { StoriesSection } from "./components/StoriesSection";
 import type { Story } from "./components/StoriesSection";
 
+const NOVEL_INTRO =
+  "Five years in the making, What’s Right With You? is a psychological story about codependency, memory, and the quiet terror of being truly known. Spin the cover to inspect the jacket, read the opening chapter, or explore shorter fiction below.";
+
 const NOVEL_BLURB = [
-  "Replace this with your official back-cover blurb. Set the central tension, introduce your protagonists, and leave the reader with the core question that drives the story forward.",
-  "Whether read late at night or in a quiet afternoon corner, this novel asks what happens when the quiet truths we avoid finally demand an answer.",
+  "Most feel accomplished on their twenty-first birthday.\nI cried.",
+  "When two shattered souls snap together like puzzle pieces, it's difficult to tell whether you're being fixed, or losing touch with your own identity.",
+  "So when Lucinda, a young lady without a past, meets Samuel, a fellow who sees no future for himself, a deathly duo forms.",
+  "But as their fates become intertwined, they discover the chilling truth behind the ties which bind them, and the double-edged sword of unwavering devotion.",
 ];
 
 const SHORT_WORKS: Story[] = [
@@ -37,7 +42,7 @@ export function App() {
       <div className="mx-auto max-w-5xl px-6 sm:px-8">
         {/* Minimal Header */}
         <header className="flex items-center justify-between border-b border-stone-200/80 py-8">
-          <span className="font-serif text-xl font-normal tracking-tight text-stone-900">
+          <span className="font-serif text-xl font-normal text-stone-900">
             Thomas Isebeck
           </span>
           <nav className="flex gap-7 text-base font-medium text-stone-600">
@@ -64,6 +69,7 @@ export function App() {
             title="What’s Right With You?"
             author="Thomas Isebeck"
             coverUrl="/cover"
+            intro={NOVEL_INTRO}
             blurbParagraphs={NOVEL_BLURB}
           />
 

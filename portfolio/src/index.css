@@ -37,13 +37,13 @@
 }
 
 /* =========================================
-   Body & UI: Alegreya Sans (/fonts/alegreya/)
+   Body & UI: Alegreya Sans (/fonts/)
    ========================================= */
 
 /* 100 - Thin */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Thin.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-ThinItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-ThinItalic.woff2") format("woff2");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -60,7 +60,7 @@
 /* 300 - Light */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Light.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -68,7 +68,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-LightItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -77,7 +77,7 @@
 /* 400 - Regular */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Regular.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -85,7 +85,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Italic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -94,7 +94,7 @@
 /* 500 - Medium */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Medium.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -102,7 +102,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-MediumItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-MediumItalic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -111,7 +111,7 @@
 /* 700 - Bold */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Bold.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -119,7 +119,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-BoldItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -128,7 +128,7 @@
 /* 800 - ExtraBold */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-ExtraBold.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -136,7 +136,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-ExtraBoldItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-ExtraBoldItalic.woff2") format("woff2");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -145,7 +145,7 @@
 /* 900 - Black */
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-Black.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -153,7 +153,7 @@
 
 @font-face {
   font-family: "Alegreya Sans";
-  src: url("/fonts/alegreya/AlegreyaSans-BlackItalic.woff2") format("woff2");
+  src: url("/fonts/AlegreyaSans-BlackItalic.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -170,9 +170,9 @@
   h4 {
     font-family: var(--font-serif);
     font-weight: 400;
+    letter-spacing: 0.02em;
   }
 }
-
 /* =========================================
    Tailwind v4 Theme Tokens
    ========================================= */
@@ -180,4 +180,13 @@
 @theme {
   --font-serif: "Liberation Serif", Georgia, "Times New Roman", serif;
   --font-sans: "Alegreya Sans", system-ui, -apple-system, sans-serif;
+
+  --text-base--line-height: 1.7;
+  --text-lg--line-height: 1.7;
+  --text-xl--line-height: 1.5;
+  --text-2xl--line-height: 1.5;
+  --text-3xl--line-height: 1.5;
+  --text-4xl--line-height: 1.5;
+
+  --text-5xl--line-height: 1.5;
 }
